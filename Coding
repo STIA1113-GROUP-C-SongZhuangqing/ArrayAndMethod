@@ -1,0 +1,64 @@
+package ArrayAndMethod;
+import java.util.Scanner;
+public class menu {
+	public static void AcceptArray(int array[] ) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter 5 array elements :");
+		for(int i=0;i<array.length;i++) {
+			array[i]=scan.nextInt();	
+			
+		}
+	}
+	public static void ShowArray(int array[]) {
+		
+		for(int j=0;j<array.length;j++) {
+			System.out.println("The array is:"+array[j]);
+		}
+	}
+	public static void Search(int search,int array[]) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please which number you want search:");
+		search=scan.nextInt();
+		System.out.println("That is:"+array[search]);
+	}
+	public static void Sort(int array[],int i,int j,int k,int n) {
+		
+		for(i=0;i<n-1;i++)
+			for(j=0;j<n-1-i;j++) {
+			if(array[j]>array[j+1]) {
+			k=array[j];
+			array[j]=array[j+1];
+			array[j+1]=k;
+			}
+			}
+			}		
+	public static void main(String[] args){
+	Scanner scan = new Scanner(System.in);
+	int option;
+	int[] array = new int[5];
+	int search;
+
+	System.out.println("1.Accept elements of an array");
+	System.out.println("2.Display elements of an array");
+	System.out.println("3.Search the element within array given by the user");
+	System.out.println("4.Sort the array by using any sort method");
+	System.out.println("Please enter the number:");
+	option=scan.nextInt();
+		switch(option) {
+		case 1:
+			AcceptArray(array);
+			break;
+		case 2:
+			ShowArray(array);
+			break;
+		case 3:
+			Search(search,array);
+			break;
+		case 4:
+			Sort();
+			break;
+		}
+
+}
+}
